@@ -1,232 +1,50 @@
 <!DOCTYPE html>
-
 <html lang="ko">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="#f5f1e8" name="theme-color"/>
-<title>Deep Dive: AI 시대에도 물가와 양극화가 사라지지 않는 이유</title>
+<title>naivblue — 글 목록</title>
+<meta content="경제·기술·사회 구조를 깊게 읽는 공개용 해설 모음." name="description"/>
 <style>
 :root{--bg:#f5f1e8;--paper:#fffefa;--panel:#ffffff;--ink:#14233a;--body:#405064;--muted:#758297;--line:#dfe3e6;--teal:#087f78;--blue:#245ea8;--gold:#a66a12;--rose:#b64b61;--shadow:0 16px 45px rgba(35,48,68,.09),0 2px 8px rgba(35,48,68,.05)}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);background:radial-gradient(circle at 82% 0%,rgba(36,94,168,.08),transparent 31%),radial-gradient(circle at 0% 34%,rgba(8,127,120,.06),transparent 28%),linear-gradient(180deg,#faf8f3,var(--bg));font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR",sans-serif;line-height:1.78;-webkit-font-smoothing:antialiased}
-a{color:var(--blue);text-decoration:none}a:hover{text-decoration:underline}strong{color:#112039}code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;background:#f0f2f4;padding:.12em .38em;border-radius:4px}
-.hero{max-width:1180px;margin:0 auto;padding:78px 34px 52px;position:relative}.eyebrow{display:inline-flex;gap:9px;align-items:center;padding:7px 12px;border:1px solid rgba(8,127,120,.26);border-radius:999px;color:var(--teal);background:rgba(255,255,255,.65);font-size:12px;font-weight:800;letter-spacing:.14em}.eyebrow:before{content:"";width:7px;height:7px;border-radius:50%;background:var(--teal);box-shadow:0 0 0 5px rgba(8,127,120,.1)}h1{max-width:920px;margin:24px 0 18px;font-size:clamp(39px,6vw,74px);line-height:1.08;letter-spacing:-.052em;color:#10233d}.hero-subtitle{max-width:760px;color:#52627a;font-size:clamp(17px,2vw,22px);line-height:1.55}.hero-meta{display:flex;gap:20px;flex-wrap:wrap;margin-top:25px;color:var(--muted);font-size:13px}.hero-meta span{padding-right:20px;border-right:1px solid #ccd2d8}.hero-meta span:last-child{border:0}.thesis{margin-top:43px;max-width:980px;padding:27px 29px;border:1px solid rgba(8,127,120,.22);border-radius:20px;background:linear-gradient(135deg,#eff9f7,#f4f7fc);box-shadow:var(--shadow);font-size:clamp(18px,2vw,24px);line-height:1.55;color:#20324a}.thesis-label{display:block;margin-bottom:9px;color:var(--teal);font-size:11px;font-weight:900;letter-spacing:.15em}
-.signal-grid{max-width:1180px;margin:0 auto 56px;padding:0 34px;display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.signal{min-height:130px;padding:20px;border:1px solid var(--line);border-radius:16px;background:rgba(255,255,255,.82);box-shadow:0 7px 24px rgba(35,48,68,.055);backdrop-filter:blur(12px)}.signal span{font-size:11px;color:var(--muted);letter-spacing:.12em}.signal strong{display:block;margin:12px 0 4px;font-size:19px;color:#172941}.signal small{color:#65748a}
-.layout{max-width:1180px;margin:0 auto;padding:0 34px 100px;display:grid;grid-template-columns:240px minmax(0,1fr);gap:38px}.toc{position:sticky;top:24px;align-self:start;max-height:calc(100vh - 48px);overflow:auto;padding:18px 12px;border:1px solid var(--line);border-radius:18px;background:rgba(255,255,255,.87);box-shadow:0 12px 38px rgba(35,48,68,.07);backdrop-filter:blur(16px)}.toc-title{padding:6px 10px 13px;color:#172941;font-size:12px;font-weight:900;letter-spacing:.15em}.toc a{display:flex;gap:9px;padding:8px 10px;border-radius:9px;color:#66768b;font-size:12px;line-height:1.35}.toc a:hover{color:#17385f;background:#eef4f9;text-decoration:none}.toc a span{color:var(--teal);font-weight:800;font-variant-numeric:tabular-nums}
-.content{min-width:0}.report-section{margin:0 0 24px;padding:34px 38px;border:1px solid var(--line);border-radius:22px;background:rgba(255,255,255,.94);box-shadow:var(--shadow)}.section-kicker{color:var(--teal);font-size:11px;font-weight:900;letter-spacing:.15em}.report-section h2{margin:7px 0 25px;font-size:clamp(25px,3vw,38px);line-height:1.18;letter-spacing:-.035em;color:#152a45}.report-section h3{margin:29px 0 9px;color:var(--gold);font-size:18px}.report-section p{color:var(--body)}.report-section ul,.report-section ol{padding-left:22px}.report-section li{margin:8px 0;color:var(--body)}.report-section li::marker{color:var(--teal)}
-.report-section blockquote{margin:20px 0;padding:17px 20px;border-left:3px solid var(--teal);background:#eff8f6;color:#314c5b}.final-section{border-color:#e3d0aa;background:linear-gradient(145deg,#fffaf0,#fff)}.source-section{background:#fbfcfd}.source-section li{font-size:13px}
-.table-wrap{overflow-x:auto;margin:22px 0;border:1px solid var(--line);border-radius:15px;background:#fff;box-shadow:0 4px 16px rgba(35,48,68,.045)}table{width:100%;border-collapse:collapse;min-width:650px}th,td{padding:13px 15px;border-bottom:1px solid #e7eaed;text-align:left;vertical-align:top}th{color:#146f6b;font-size:12px;letter-spacing:.04em;background:#edf7f5}td{color:#46566a;font-size:13px}tr:last-child td{border:0}tr:hover td{background:#f7fafc}
-.flow-diagram{display:grid;grid-template-columns:1fr 24px 1fr 24px 1fr 24px 1fr;align-items:stretch;margin:28px 0 8px}.flow-step{padding:17px 15px;border:1px solid #cfddea;border-radius:14px;background:linear-gradient(145deg,#f5f9fd,#fff)}.flow-step strong{display:block;margin:8px 0 5px;font-size:14px;color:#173456}.flow-step small{display:block;color:#6c7d91;font-size:11px;line-height:1.5}.flow-number{color:var(--teal);font-size:10px;font-weight:900;letter-spacing:.12em}.flow-arrow{align-self:center;text-align:center;color:var(--teal);font-size:17px}
-.reading-progress{position:fixed;z-index:50;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--teal),var(--blue),#d59a38)}
-.back-top{position:fixed;right:22px;bottom:22px;width:42px;height:42px;display:grid;place-items:center;border:1px solid #d5dce3;border-radius:50%;background:#fff;color:#173456;box-shadow:var(--shadow)}
-@media(max-width:900px){.signal-grid{grid-template-columns:repeat(2,1fr)}.layout{grid-template-columns:1fr}.toc{position:relative;top:0;display:grid;grid-template-columns:repeat(2,1fr);max-height:none}.toc-title{grid-column:1/-1}.report-section{padding:27px 24px}.flow-diagram{grid-template-columns:1fr}.flow-arrow{transform:rotate(90deg);padding:3px}}
-@media(max-width:580px){.hero{padding:52px 18px 35px}.signal-grid,.layout{padding-left:18px;padding-right:18px}.signal-grid{grid-template-columns:1fr 1fr}.signal{min-height:112px;padding:15px}.signal strong{font-size:15px}.toc{grid-template-columns:1fr}.report-section{border-radius:17px;padding:24px 18px}.hero-meta span{border:0;padding:0;width:100%}table{min-width:580px}}
-@media print{body{background:#fff;color:#111}.toc,.reading-progress,.back-top,.signal-grid{display:none}.layout{display:block;padding:0}.hero{padding:20px 0}.report-section{box-shadow:none;background:#fff;color:#111;break-inside:avoid}.report-section p,.report-section li,td{color:#222}h1,.report-section h2,strong{color:#111}}
-
-.byline{max-width:1180px;margin:-28px auto 34px;padding:0 34px;color:#778396;font-size:12px}
-.public-note{max-width:800px;margin:0 auto 34px;padding:14px 18px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);color:#65748a;font-size:13px;text-align:center}
-@media(max-width:580px){.byline{padding:0 18px}.public-note{margin-left:18px;margin-right:18px}}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;color:var(--ink);background:radial-gradient(circle at 82% 0%,rgba(36,94,168,.08),transparent 31%),radial-gradient(circle at 0% 34%,rgba(8,127,120,.06),transparent 28%),linear-gradient(180deg,#faf8f3,var(--bg));font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR",sans-serif;line-height:1.78;-webkit-font-smoothing:antialiased;min-height:100vh}
+a{color:var(--blue);text-decoration:none}
+.hero{max-width:1080px;margin:0 auto;padding:78px 34px 30px}
+.eyebrow{display:inline-flex;gap:9px;align-items:center;padding:7px 12px;border:1px solid rgba(8,127,120,.26);border-radius:999px;color:var(--teal);background:rgba(255,255,255,.65);font-size:12px;font-weight:800;letter-spacing:.14em}
+.eyebrow:before{content:"";width:7px;height:7px;border-radius:50%;background:var(--teal);box-shadow:0 0 0 5px rgba(8,127,120,.1)}
+h1{margin:24px 0 14px;font-size:clamp(38px,6vw,68px);line-height:1.08;letter-spacing:-.052em;color:#10233d}
+.hero-subtitle{max-width:680px;color:#52627a;font-size:clamp(16px,2vw,20px);line-height:1.55}
+.list{max-width:1080px;margin:0 auto;padding:30px 34px 110px;display:grid;gap:18px}
+.card{display:block;padding:28px 30px;border:1px solid var(--line);border-radius:20px;background:rgba(255,255,255,.94);box-shadow:var(--shadow);transition:transform .18s ease,box-shadow .18s ease}
+.card:hover{transform:translateY(-3px);box-shadow:0 22px 55px rgba(35,48,68,.13),0 3px 10px rgba(35,48,68,.06);text-decoration:none}
+.card-meta{display:flex;gap:14px;flex-wrap:wrap;align-items:center;color:var(--muted);font-size:12px;letter-spacing:.04em}
+.card-date{color:var(--teal);font-weight:800;font-variant-numeric:tabular-nums}
+.card h2{margin:13px 0 10px;font-size:clamp(22px,3vw,30px);line-height:1.22;letter-spacing:-.035em;color:#152a45}
+.card p{margin:0 0 16px;color:var(--body);font-size:15px;line-height:1.7}
+.tags{display:flex;gap:8px;flex-wrap:wrap}
+.tag{padding:5px 11px;border:1px solid rgba(8,127,120,.22);border-radius:999px;background:rgba(8,127,120,.05);color:#146f6b;font-size:11px;font-weight:700;letter-spacing:.03em}
+.footer{max-width:1080px;margin:0 auto;padding:0 34px 60px;color:#8893a3;font-size:12px;border-top:1px solid var(--line);padding-top:22px}
+@media(max-width:580px){.hero{padding:52px 18px 24px}.list{padding:24px 18px 80px}.card{padding:22px 20px;border-radius:16px}}
 </style>
-<meta content="AI가 상품을 싸게 만들어도 서비스 물가와 양극화가 사라지지 않는 이유를 자산 인플레이션과 달러 패권의 연결 구조로 설명합니다." name="description"/></head>
+</head>
 <body>
-<div class="reading-progress" id="progress"></div>
-<header class="hero" id="top">
-<span class="eyebrow">ECONOMY &amp; SOCIETY · DEEP DIVE</span>
-<h1>AI 시대에도 물가와 양극화가 사라지지 않는 이유</h1>
-<p class="hero-subtitle">서비스 물가·자산 인플레이션·달러 패권을 연결해서 보기</p>
-<div class="hero-meta"><span>2026-06-07</span><span>AI · 서비스 물가 · 자산 인플레이션</span><span>양극화 · 달러 패권</span></div>
-<div class="thesis"><span class="thesis-label">CORE THESIS</span>AI가 상품 생산비를 낮춰도 주택·의료·교육·돌봄 같은 서비스와 희소 자산의 가격은 쉽게 내려가지 않는다. AI 기업의 지분을 가진 사람은 자산 상승의 혜택을 받지만 노동소득에 의존하는 사람은 높은 서비스 비용을 감당해야 하므로, 기술 발전이 물가 안정과 부의 평등을 자동으로 만들지는 않는다.</div>
+<header class="hero">
+<span class="eyebrow">NAIVBLUE · NOTES</span>
+<h1>naivblue</h1>
+<p class="hero-subtitle">경제·기술·사회 구조를 깊게 읽는 공개용 해설 모음.</p>
 </header>
-<div class="byline">AI, 물가, 자산 소유와 달러 질서를 함께 읽는 공개용 해설</div><section class="signal-grid">
-<div class="signal"><span>01 · PRODUCTIVITY</span><strong>상품은 싸질 수 있다</strong><small>AI와 자동화가 복제비용을 낮춘다.</small></div>
-<div class="signal"><span>02 · SCARCITY</span><strong>서비스는 다르다</strong><small>주거·의료·교육은 공급이 제한된다.</small></div>
-<div class="signal"><span>03 · OWNERSHIP</span><strong>지분이 격차를 만든다</strong><small>생산성 이익은 자산 보유자에게 먼저 간다.</small></div>
-<div class="signal"><span>04 · DOLLAR</span><strong>미국시장으로 회귀한다</strong><small>AI와 주식시장이 달러 수요를 강화한다.</small></div>
-</section>
-<div class="public-note">이 글은 경제 구조를 설명하는 공개용 해설이며 특정 금융상품을 권유하지 않습니다.</div><main class="layout">
-<nav class="toc"><div class="toc-title">CONTENTS</div><a href="#section-1"><span>01</span>“AI가 모든 것을 싸게 만든다”는 주장에 빠진 것</a><a href="#section-2"><span>02</span>상품 물가와 서비스 물가는 움직이는 방식이 다르다</a><a href="#section-3"><span>03</span>자산 인플레이션이 서비스 물가를 밀어 올리는 과정</a><a href="#section-4"><span>04</span>AI 성장은 왜 양극화를 자동으로 해결하지 못하는가</a><a href="#section-5"><span>05</span>기본소득만으로 해결하기 어려운 이유</a><a href="#section-6"><span>06</span>미국은 왜 AI와 주식시장에 집중하는가</a><a href="#section-7"><span>07</span>AI 산업과 달러 패권은 어떻게 연결되는가</a><a href="#section-8"><span>08</span>달러 패권 유지의 대가</a><a href="#section-9"><span>09</span>강달러는 생활비와 물가에 어떻게 전달되는가</a><a href="#section-10"><span>10</span>금리와 신용은 이 구조를 깨뜨리는 위험 신호</a><a href="#section-12"><span>11</span>이 구조를 이해하기 위해 확인할 지표</a><a href="#final-view"><span>12</span>최종 판단</a><a href="#sources"><span>13</span>참고 소스</a></nav>
-<article class="content"><section class="report-section" id="section-1"><div class="section-kicker">01 · DEEP DIVE</div><h2>“AI가 모든 것을 싸게 만든다”는 주장에 빠진 것</h2>
-<p>AI와 자동화가 생산성을 높이면 소프트웨어, 콘텐츠, 정보 검색, 일부 공산품의 생산비는 낮아질 수 있다. 같은 인력과 자본으로 더 많은 결과물을 만들 수 있기 때문이다.</p>
-<p>하지만 우리가 실제로 큰돈을 쓰는 항목은 생산량을 무한히 늘릴 수 있는 상품만이 아니다.</p>
-<ul>
-<li>좋은 위치의 주택과 토지는 한정돼 있다.</li>
-<li>의료·돌봄·교육은 사람의 시간과 숙련을 많이 필요로 한다.</li>
-<li>법률·금융·컨설팅 같은 전문 서비스는 신뢰와 책임을 자동화하기 어렵다.</li>
-<li>전력망, 교통, 데이터센터 같은 인프라는 구축에 시간과 자본이 든다.</li>
-</ul>
-<p>따라서 AI가 일부 상품을 싸게 만들어도 생활비 전체가 같은 속도로 낮아진다고 볼 수 없다. 오히려 희소한 자산과 서비스에 수요가 몰리면 그 가격은 더 높아질 수 있다.</p>
-</section><section class="report-section" id="section-2"><div class="section-kicker">02 · DEEP DIVE</div><h2>상품 물가와 서비스 물가는 움직이는 방식이 다르다</h2>
-<h3>상품은 복제하고 수입할 수 있다</h3>
-<p>전자제품, 의류, 생활용품은 생산기술이 발전하거나 더 저렴한 해외 공급처가 생기면 가격을 낮출 수 있다. 디지털 상품은 복제비용이 거의 0에 가까워질 수도 있다.</p>
-<h3>서비스는 사람과 장소에 묶여 있다</h3>
-<p>서비스 가격은 임금, 임대료, 보험료, 규제 비용의 영향을 크게 받는다. 간호사·교사·돌봄 노동자의 생산성을 공장처럼 빠르게 높이기 어렵고, 서울이나 뉴욕의 주택을 다른 지역에서 수입할 수도 없다.</p>
-<div class="table-wrap"><table>
-<thead>
-<tr>
-<th>구분</th>
-<th>가격을 낮추는 힘</th>
-<th>가격이 쉽게 안 내려가는 이유</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>공산품</td>
-<td>자동화, 대량생산, 해외수입</td>
-<td>원자재·관세·운송비</td>
-</tr>
-<tr>
-<td>디지털 상품</td>
-<td>복제비용 감소, AI 자동화</td>
-<td>플랫폼 독점, 구독료</td>
-</tr>
-<tr>
-<td>주거</td>
-<td>신규 공급, 금리 하락</td>
-<td>토지 희소성, 규제, 좋은 입지 제한</td>
-</tr>
-<tr>
-<td>의료·돌봄</td>
-<td>일부 진단·행정 자동화</td>
-<td>숙련 노동과 대면 서비스 필요</td>
-</tr>
-<tr>
-<td>교육</td>
-<td>온라인 콘텐츠와 AI 튜터</td>
-<td>학위·돌봄·네트워크의 희소성</td>
-</tr>
-<tr>
-<td>전문 서비스</td>
-<td>문서·분석 자동화</td>
-<td>책임, 신뢰, 판단의 가치</td>
-</tr>
-</tbody>
-</table></div>
-<p>핵심은 <strong>생산성이 높아지는 영역과 가계지출에서 큰 비중을 차지하는 영역이 반드시 같지 않다</strong>는 점이다.</p>
-</section><section class="report-section" id="section-3"><div class="section-kicker">03 · DEEP DIVE</div><h2>자산 인플레이션이 서비스 물가를 밀어 올리는 과정</h2>
-<p>중앙은행과 정부가 경기 방어를 위해 유동성을 공급하면 그 돈이 모든 사람과 산업에 균등하게 퍼지지 않는다. 금융시장 접근성이 높은 기업과 자산 보유자가 먼저 혜택을 받을 수 있다.</p>
-<ol>
-<li>유동성과 산업 지원이 대형 기술기업으로 집중된다.</li>
-<li>기술기업의 매출 기대와 주가가 상승한다.</li>
-<li>창업자·경영자·주주·고소득 기술인력의 자산가치가 커진다.</li>
-<li>이들이 선호하는 우량주택, 교육, 의료, 여행, 개인서비스 수요가 증가한다.</li>
-<li>공급이 제한된 서비스와 실물자산 가격이 상승한다.</li>
-<li>자산을 보유하지 않은 근로자는 임금보다 빠르게 오르는 비용을 부담한다.</li>
-</ol>
-<p>이 구조에서는 상품 가격이 안정돼도 생활이 싸졌다고 느끼기 어렵다. 스마트폰과 의류는 상대적으로 저렴해져도 주거비·교육비·의료비가 더 빠르게 오르면 중산층의 체감물가는 높아진다.</p>
-<div class="flow-diagram"><div class="flow-step"><span class="flow-number">01</span><strong>AI 투자 집중</strong><small>자본과 정책 지원이 기술기업에 집중</small></div><span class="flow-arrow">→</span><div class="flow-step"><span class="flow-number">02</span><strong>지분가치 상승</strong><small>주주와 고소득층의 자산 증가</small></div><span class="flow-arrow">→</span><div class="flow-step"><span class="flow-number">03</span><strong>희소 수요 확대</strong><small>우량주택·교육·의료·서비스 수요 증가</small></div><span class="flow-arrow">→</span><div class="flow-step"><span class="flow-number">04</span><strong>체감물가 상승</strong><small>근로소득 계층의 비용 부담 확대</small></div></div></section><section class="report-section" id="section-4"><div class="section-kicker">04 · DEEP DIVE</div><h2>AI 성장은 왜 양극화를 자동으로 해결하지 못하는가</h2>
-<p>AI의 생산성 이익이 누구에게 귀속되는지가 중요하다.</p>
-<h3>지분을 가진 사람</h3>
-<p>AI 기업의 주주와 창업자는 미래 이익이 주가에 반영되는 즉시 자산이 늘어난다. 실제 현금흐름이 완전히 실현되기 전에도 자본시장에서 부가 증가할 수 있다.</p>
-<h3>노동을 제공하는 사람</h3>
-<p>노동자는 임금 협상과 고용시장을 거쳐야 생산성 이익을 얻는다. AI가 업무를 대체하거나 협상력을 낮추면 생산성 향상이 임금 상승으로 이어지지 않을 수도 있다.</p>
-<h3>자산 없이 서비스를 소비하는 사람</h3>
-<p>주택·주식 같은 자산은 없지만 주거·의료·교육 서비스를 구매해야 한다. 자산가격과 서비스 가격이 임금보다 빠르게 오르면 실질적인 선택권이 줄어든다.</p>
-<p>결국 문제는 AI가 부를 만들 수 있느냐가 아니다. <strong>새로 만들어진 부가 지분가치, 임금, 세금, 공공서비스 사이에 어떻게 배분되는가</strong>가 핵심이다.</p>
-</section><section class="report-section" id="section-5"><div class="section-kicker">05 · DEEP DIVE</div><h2>기본소득만으로 해결하기 어려운 이유</h2>
-<p>AI가 대부분의 노동을 대체하면 기본소득으로 소비를 유지할 수 있다는 주장이 있다. 그러나 다음 질문이 남는다.</p>
-<ul>
-<li>재원을 누가 부담하는가?</li>
-<li>지급액을 누가 결정하는가?</li>
-<li>주택과 의료 공급이 그대로인데 구매력만 늘면 가격이 다시 오르지 않는가?</li>
-<li>AI 기업의 지분과 데이터·인프라 소유권은 누구에게 귀속되는가?</li>
-</ul>
-<p>기본소득이 최소 생활을 보장할 수는 있지만, 희소 자산의 소유 격차까지 자동으로 해결하지는 않는다. 공급이 제한된 주택과 서비스에 현금만 더 투입하면 일부는 임대료와 서비스 가격으로 흡수될 수 있다.</p>
-<p>따라서 분배 문제는 현금 지급뿐 아니라 주택 공급, 교육·의료 접근성, 경쟁정책, 세제, 노동자의 지분 참여를 함께 봐야 한다.</p>
-</section><section class="report-section" id="section-6"><div class="section-kicker">06 · DEEP DIVE</div><h2>미국은 왜 AI와 주식시장에 집중하는가</h2>
-<p>미국 경제정책을 단순한 “주가 띄우기”로만 설명할 수는 없다. AI 데이터센터, 반도체, 클라우드 투자는 실제 설비투자와 기업 이익을 만든다.</p>
-<p>다만 정책자금과 민간자본이 소수 기술기업에 집중될수록 다음 효과가 함께 나타난다.</p>
-<ul>
-<li>생산성과 기업 이익이 빠르게 성장한다.</li>
-<li>S&amp;P500과 나스닥의 매력이 높아진다.</li>
-<li>전 세계 연기금·기관·개인이 미국 주식을 사기 위해 달러를 확보한다.</li>
-<li>미국 기업은 낮은 자본비용으로 더 큰 투자를 이어간다.</li>
-<li>지수 상승의 혜택은 주식을 많이 보유한 계층에 집중된다.</li>
-</ul>
-<p>즉 AI 산업의 경쟁력은 기업 이익만 만드는 것이 아니라 <strong>미국 자본시장으로 세계의 저축을 끌어들이는 힘</strong>으로 작동한다.</p>
-</section><section class="report-section" id="section-7"><div class="section-kicker">07 · DEEP DIVE</div><h2>AI 산업과 달러 패권은 어떻게 연결되는가</h2>
-<p>달러 패권의 기반은 군사력이나 원유 결제만이 아니다. 미국 국채시장의 깊이, 법제도, 금융 인프라, 세계적인 기업과 주식시장이 함께 달러 수요를 만든다.</p>
-<p>세계 투자자가 NVIDIA, Microsoft, 미국 AI ETF나 S&amp;P500을 사려면 달러 자산을 보유해야 한다. 미국의 기술기업이 계속 높은 이익과 유동성을 제공하면 달러는 투자와 가치저장의 통화로 선택된다.</p>
-<p>IMF COFER 자료에서 달러의 외환보유액 비중은 장기적으로 낮아졌지만 여전히 과반이다. 환율 변동도 비중 변화에 영향을 주기 때문에 이를 즉각적인 달러 패권 붕괴로 해석하기는 어렵다.</p>
-<p>미국은 제조업 전체를 동시에 부흥시키지 못하더라도 AI·금융시장·달러가 연결된 순환을 유지하면 세계 자본을 계속 끌어들일 수 있다.</p>
-<div class="flow-diagram"><div class="flow-step"><span class="flow-number">01</span><strong>AI 기술 우위</strong><small>미국 기업의 생산성과 이익 성장</small></div><span class="flow-arrow">→</span><div class="flow-step"><span class="flow-number">02</span><strong>주식시장 매력</strong><small>글로벌 자금이 미국시장으로 이동</small></div><span class="flow-arrow">→</span><div class="flow-step"><span class="flow-number">03</span><strong>달러 수요</strong><small>투자와 가치저장을 위한 달러 확보</small></div><span class="flow-arrow">→</span><div class="flow-step"><span class="flow-number">04</span><strong>재투자 순환</strong><small>낮은 자본비용이 추가 AI 투자를 지원</small></div></div></section><section class="report-section" id="section-8"><div class="section-kicker">08 · DEEP DIVE</div><h2>달러 패권 유지의 대가</h2>
-<p>이 전략은 미국 전체에 균등한 번영을 보장하지 않는다.</p>
-<ul>
-<li>AI·반도체·금융 종사자와 주주는 큰 혜택을 얻는다.</li>
-<li>기술 산업이 없는 지역과 전통 제조업 종사자는 상대적으로 뒤처질 수 있다.</li>
-<li>주가 상승이 소비와 세수를 지지하지만 자산 격차도 키운다.</li>
-<li>재정지출과 자산가격 상승이 서비스 물가를 자극하면 중앙은행의 금리 인하가 어려워진다.</li>
-<li>높은 금리는 주택 구매자와 취약기업에 더 큰 부담을 준다.</li>
-</ul>
-<p>따라서 미국이 달러와 AI 패권을 유지하는 과정은 <strong>국가 차원의 경쟁력 강화와 내부 양극화 심화가 동시에 진행되는 과정</strong>일 수 있다.</p>
-</section><section class="report-section" id="section-9"><div class="section-kicker">09 · DEEP DIVE</div><h2>강달러는 생활비와 물가에 어떻게 전달되는가</h2>
-
-
-
-
-<p>달러 강세는 미국 밖의 경제에 수입물가 충격을 전달한다. 원유·원자재·식품의 달러 표시 가격이 변하지 않아도 자국 통화가 약해지면 실제 지불 비용은 올라간다.</p>
-<ul>
-<li>에너지와 원자재의 수입가격이 상승해 기업의 생산비를 높인다.</li>
-<li>높아진 비용은 운송·외식·여행·각종 서비스 가격으로 전가될 수 있다.</li>
-<li>달러 부채가 있는 기업과 정부는 원리금 상환 부담이 커진다.</li>
-<li>물가를 막기 위해 금리를 높게 유지하면 주거와 내수경제가 압박받는다.</li>
-</ul>
-<p>이 경로는 달러 패권이 단지 국제결제의 문제가 아니라 각국의 생활비와 통화정책에도 영향을 미친다는 뜻이다. 미국의 기술기업과 자본시장이 강할수록 달러 수요가 유지되고, 그 비용은 통화가 약한 국가의 수입물가로 나타날 수 있다.</p>
-</section><section class="report-section" id="section-10"><div class="section-kicker">10 · DEEP DIVE</div><h2>금리와 신용은 이 구조를 깨뜨리는 위험 신호</h2>
-<p>기존 문서에서 중심이었던 금리·회사채 이야기는 이 구조의 <strong>붕괴 조건</strong>으로 이해하면 된다.</p>
-<p>AI 기업과 자산시장의 상승은 계속 자금을 조달할 수 있다는 믿음에 의존한다. 국채금리만 오를 때는 성장주의 밸류에이션이 낮아지는 정도로 끝날 수 있다.</p>
-<p>하지만 국채금리 상승에 회사채 스프레드 확대까지 겹치면 기업의 실제 자본비용이 급증한다. 데이터센터·반도체 주문·설비투자가 줄고 EPS 추정치가 낮아지면 다음 순환이 발생한다.</p>
-<p>현재 미국 투자등급 회사채 스프레드는 아직 낮아 광범위한 신용경색을 가리키지 않는다. 따라서 지금은 AI 성장 붕괴를 단정하기보다 이 순환이 실제로 시작되는지 관찰할 단계다.</p>
-<div class="flow-diagram"><div class="flow-step"><span class="flow-number">01</span><strong>금리·신용비용 상승</strong><small>기업의 실제 자본비용 증가</small></div><span class="flow-arrow">→</span><div class="flow-step"><span class="flow-number">02</span><strong>AI 투자 축소</strong><small>데이터센터·반도체 주문 감소</small></div><span class="flow-arrow">→</span><div class="flow-step"><span class="flow-number">03</span><strong>이익 전망 하향</strong><small>매출과 EPS 추정치 조정</small></div><span class="flow-arrow">→</span><div class="flow-step"><span class="flow-number">04</span><strong>자산가격 압력</strong><small>기술주와 위험선호 약화</small></div></div></section><section class="report-section" id="section-12"><div class="section-kicker">11 · DEEP DIVE</div><h2>이 구조를 이해하기 위해 확인할 지표</h2>
-<h3>서비스 물가와 생활비</h3>
-<ul>
-<li>미국 근원 CPI 중 주거·의료·서비스 물가</li>
-<li>한국의 서비스물가와 원화 기준 수입물가</li>
-<li>주택 임대료와 임금 상승률의 차이</li>
-</ul>
-<h3>자산 집중과 AI 경제</h3>
-<ul>
-<li>S&amp;P500 상위 기업의 지수 비중</li>
-<li>빅테크의 AI 자본적지출과 현금흐름</li>
-<li>AI 생산성 향상이 임금과 고용에 전파되는지</li>
-<li>반도체 수주와 데이터센터 투자계획</li>
-</ul>
-<h3>달러와 국제 자금 흐름</h3>
-<ul>
-<li>IMF COFER의 달러 준비통화 비중</li>
-<li>외국인의 미국 국채·주식 보유 흐름</li>
-<li>원/달러 환율과 한국 외국인 수급</li>
-</ul>
-<h3>붕괴 경보</h3>
-<ul>
-<li>미국 투자등급·하이일드 회사채 스프레드</li>
-<li>기업대출 연체율과 은행 대출태도</li>
-<li>AI 기업의 매출·EPS 추정치 하향</li>
-</ul>
-</section><section class="report-section final-section" id="final-view"><div class="section-kicker">12 · DEEP DIVE</div><h2>최종 판단</h2>
-
-
-
-
-<p>AI는 더 많은 부와 더 저렴한 상품을 만들 수 있다. 그러나 생산비 하락이 곧바로 주거·의료·교육·돌봄 비용의 하락으로 이어지지는 않는다. 희소한 토지와 사람의 시간이 필요한 서비스는 다른 원리로 가격이 형성되기 때문이다.</p>
-<p>더 중요한 질문은 생산성의 성과가 누구에게 돌아가는가이다. 기술기업의 지분가치는 즉시 상승할 수 있지만, 임금과 공공서비스가 개선되는 속도는 훨씬 느릴 수 있다. 이 간극이 커지면 상품은 풍부해져도 삶의 필수비용과 부의 격차는 오히려 확대된다.</p>
-<p>미국의 AI 기술 우위와 자본시장은 세계 자금을 끌어들이고 달러 수요를 지지한다. 동시에 기술산업과 자산 보유자에게 부가 집중되는 부작용도 만든다. 결국 AI 시대의 핵심 과제는 기술의 발전 여부가 아니라 <strong>생산성 이익을 임금·주거·의료·교육·공공 인프라로 어떻게 확산할 것인가</strong>이다.</p>
-</section><section class="report-section source-section" id="sources"><div class="section-kicker">13 · DEEP DIVE</div><h2>참고 소스</h2>
-<ul>
-<li><a href="https://www.bls.gov/cpi/">U.S. Bureau of Labor Statistics, Consumer Price Index</a></li>
-<li><a href="https://www.bea.gov/data/gdp/gdp-industry">U.S. Bureau of Economic Analysis, GDP by Industry</a></li>
-<li><a href="https://data.imf.org/en/datasets/IMF.STA%3ACOFER">IMF, Currency Composition of Official Foreign Exchange Reserves</a></li>
-<li><a href="https://www.imf.org/en/blogs/articles/2025/10/01/dollars-share-of-reserves-held-steady-in-second-quarter-when-adjusted-for-fx-moves">IMF, Dollar reserve share and exchange-rate effects</a></li>
-<li><a href="https://fred.stlouisfed.org/series/BAMLC0A0CM">FRED, ICE BofA US Corporate Index Option-Adjusted Spread</a></li>
-<li><a href="https://fred.stlouisfed.org/series/BAMLC0A3CA">FRED, ICE BofA Single-A US Corporate Index Option-Adjusted Spread</a></li>
-</ul></section></article>
+<main class="list">
+<!-- ▼ 새 글을 추가할 때 이 카드 블록을 복사해서 맨 위에 붙여넣고 링크·제목·날짜·요약·태그만 바꾸세요 -->
+<a class="card" href="posts/2026-06-07-ai-inflation.html">
+<div class="card-meta"><span class="card-date">2026-06-07</span><span>ECONOMY &amp; SOCIETY · DEEP DIVE</span></div>
+<h2>AI 시대에도 물가와 양극화가 사라지지 않는 이유</h2>
+<p>AI가 상품을 싸게 만들어도 서비스 물가와 양극화가 사라지지 않는 이유를 자산 인플레이션과 달러 패권의 연결 구조로 설명합니다.</p>
+<div class="tags"><span class="tag">AI</span><span class="tag">서비스 물가</span><span class="tag">자산 인플레이션</span><span class="tag">양극화</span><span class="tag">달러 패권</span></div>
+</a>
+<!-- ▲ 카드 끝 -->
 </main>
-<a aria-label="맨 위로" class="back-top" href="#top">↑</a>
-<script>
-const progress=document.getElementById('progress');
-addEventListener('scroll',()=>{
- const h=document.documentElement.scrollHeight-innerHeight;
- progress.style.width=(h>0?scrollY/h*100:0)+'%';
-},{passive:true});
-</script>
+<footer class="footer">© 2026 naivblue · <a href="https://github.com/naivblue/blog">GitHub</a></footer>
 </body>
 </html>
